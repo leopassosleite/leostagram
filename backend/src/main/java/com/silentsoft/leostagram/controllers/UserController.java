@@ -20,7 +20,7 @@ import com.silentsoft.leostagram.services.UserService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
@@ -29,6 +29,7 @@ public class UserController {
 	@PostMapping("/signup")
 	public User createUser(@RequestBody User user) throws Exception {
 
+		user.setProfile("default.png");
 		Set<UserRole> roles = new HashSet<>();
 		Role role = new Role();
 		role.setRoleId(45L);

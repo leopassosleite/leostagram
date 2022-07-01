@@ -9,29 +9,42 @@
                     <button class="button-signup-facebook" mat-raised-button color="primary">Iniciar sessão com
                         Facebook</button>
                     <h4 class="or">ou</h4>
-                    <form>
+                    <form (ngSubmit)="formSubmit()">
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Telefone ou Email</mat-label>
-                            <input matInput placeholder="Telefone ou Email" />
+                            <mat-label>Email</mat-label>
+                            <input [(ngModel)]="user.email" name="email" matInput placeholder="Email" />
                         </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Telefone</mat-label>
+                            <input type="number" [(ngModel)]="user.phone" name="phone" matInput
+                                placeholder="Telefone" />
+                        </mat-form-field>
+
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Nome</mat-label>
-                            <input matInput placeholder="Nome" />
+                            <input [(ngModel)]="user.firstName" name="firstName" matInput placeholder="Nome" />
                         </mat-form-field>
+
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Sobrenome</mat-label>
-                            <input matInput placeholder="Sobrenome" />
+                            <input [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Sobrenome" />
                         </mat-form-field>
+
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Username</mat-label>
-                            <input matInput placeholder="Username" />
+                            <input [(ngModel)]="user.username" name="username" matInput placeholder="Username" />
                         </mat-form-field>
+
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Senha</mat-label>
-                            <input type="password" matInput placeholder="Senha" />
+                            <input type="password" [(ngModel)]="user.password" name="password" matInput
+                                placeholder="Senha" />
                         </mat-form-field>
+
                         <div class="container">
-                            <button class="button-signup" mat-raised-button color="primary">Registrar</button>
+                            <button type="submit" class="button-register" mat-raised-button
+                                color="primary">Registrar</button>
                         </div>
                     </form>
                 </mat-card>
