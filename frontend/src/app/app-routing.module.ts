@@ -10,7 +10,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'signup',
+    path: 'cadastrar',
     component: SignupComponent,
     pathMatch: 'full',
   }

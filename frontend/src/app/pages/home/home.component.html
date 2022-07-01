@@ -2,13 +2,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Imagem</h1>
+                <img class="phone" src="../../../assets/celular.png" alt="">
             </div>
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-6">
                 <mat-card>
                     <h3 class="text-center">Leostagram</h3>
+                    <form>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Telefone ou Email</mat-label>
+                            <input matInput placeholder="Telefone ou Email" />
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input type="password" matInput placeholder="Senha" />
+                        </mat-form-field>
+                        <button class="button-logar" mat-raised-button color="primary">Iniciar Sessão</button>
+                    </form>
+                    <h3 class="or">ou</h3>
+                    <a class="facebok-logar" href="/">Iniciar sessão com o Facebook</a>
+                    <h4 class="facebook-forgotpassword"><a href="/" class="or">Esqueceu sua senha?</a></h4>
                 </mat-card>
             </div>
         </div>
+        <mat-card class="card">
+            <h2 class="signup"><a href="/cadastrar">Não possui uma conta? Registra-te</a></h2>
+        </mat-card>
+        <h3 class="app-mobile">Obtém a aplicação</h3>
+        <a href="https://l.instagram.com/?u=https%3A%2F%2Fitunes.apple.com%2Fapp%2Finstagram%2Fid389801252%3Fpt%3D428156%26ct%3Digweb.loginPage.badge%26mt%3D8%26vt%3Dlo&e=ATN3w9Js7bPAmZUKbwV2LU_6lL9a8DVEA23umWii8LKE43OBPiKfkYY882Bwu-smytSPmIAiSBZAXRVbmDXlvqWfoB5m6WJa&s=1"><img class="appstore" src="../../../assets/AppStore.png" alt=""></a>
+        <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D8B533AE8-CE1D-4F85-9C93-DCE12F5B678B%26utm_content%3Dlo%26utm_medium%3Dbadge"><img class="appstore" style="margin-left: 10px;" src="../../../assets/GooglePlay.png" alt=""></a>
     </div>
 </div>
