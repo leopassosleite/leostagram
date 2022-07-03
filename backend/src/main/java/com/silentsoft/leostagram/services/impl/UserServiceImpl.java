@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 			local = this.userRepository.save(user);
 		}
 
-		return null;
+		return local;
 	}
 
 	// Busca usuário pelo username
