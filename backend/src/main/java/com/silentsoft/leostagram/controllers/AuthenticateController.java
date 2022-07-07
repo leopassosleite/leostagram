@@ -7,6 +7,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import com.silentsoft.leostagram.models.JwtResponse;
 import com.silentsoft.leostagram.services.impl.UserDetailsServiceImpl;
 
 @RestController
+@CrossOrigin("*")
 public class AuthenticateController {
 
 	@Autowired
@@ -32,26 +34,26 @@ public class AuthenticateController {
 	@PostMapping("/generate-token")
 	public ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest) throws Exception {
 		try {
-			authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
+			authenticate(jwtRequest.getEmail(), jwtRequest.getPassword());
 
 		} catch (UserNotFoundExcpetion e) {
 			e.printStackTrace();
 			throw new Exception("Usuário não encontrado");
 		}
-		UserDetails userDetails = this.userDetailsService.loadUserByUsername(jwtRequest.getUsername());
+		UserDetails userDetails = this.userDetailsService.loadUserByUsername(jwtRequest.getEmail());
 		String token = this.jwtUtils.generateToken(userDetails);
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
 
-	private void authenticate(String username, String password) throws Exception {
+	private void authenticate(String email, String password) throws Exception {
 
 		try {
-			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
 
 		} catch (DisabledException e) {
 			throw new Exception("USER DISABLED" + e.getMessage());
 		} catch (BadCredentialsException e) {
-			throw new Exception("Invalid Credentials" + e.getMessage());
+			throw new Exception("Email ou senha não encontrados " + e.getMessage());
 		}
 	}
 }
