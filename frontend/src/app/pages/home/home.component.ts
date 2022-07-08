@@ -54,10 +54,15 @@ export class HomeComponent implements OnInit {
             this.login.SetUser(user);
             console.log(user);
 
-            //redireciona admin-dashboard
-            
-          }
-        );
+            //redireciona admin-dashboard e user-dashboard
+            if (this.login.getUserRole() == "ADMIN") {
+              window.location.href='/admin';
+            } else if (this.login.getUserRole() == 'NORMAL') {
+              window.location.href='/user-dashboard';
+            } else {
+              this.login.logout();
+            }
+          });
       },
       (error) => {
         console.log('Error !');
