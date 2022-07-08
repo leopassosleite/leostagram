@@ -1,4 +1,4 @@
-.bootstrap-wrapper{
+.bootstrap-wrapper {
     margin-top: 50px;
     margin-left: -50px;
 }
@@ -13,19 +13,19 @@ mat-card {
     margin-left: 230px;
 }
 
-.card{
+.card {
     margin-top: -155px;
     margin-left: 572px;
     width: 350px;
     text-align: center;
 }
 
-.text-center{
+.text-center {
     padding-top: 20px;
     margin-bottom: 40px;
     text-align: center;
     font-size: 30px;
-    font-family:fantasy
+    font-family: fantasy
 }
 
 .full-width {
@@ -47,16 +47,15 @@ mat-card {
     color: rgba(29, 28, 28, 0.644);
 }
 
-.facebok-logar{
+.facebok-logar {
     margin-left: 60px;
     font-size: 15px;
     text-decoration: none;
     color: rgb(9, 9, 104);
 }
 
-.facebook-forgotpassword{
-    margin-top: 10px;
-    margin-left: 95px;
+.facebook-forgotpassword {
+    text-align: center;
     font-size: 13px;
 }
 
@@ -65,13 +64,126 @@ mat-card {
     text-decoration: none;
 }
 
-.app-mobile{
+.app-mobile {
     margin-top: 20px;
     margin-left: 680px;
     font-size: 15px;
 }
 
-.appstore{
-   width: 10%;
-   margin-left: 625px;
+.appstore {
+    width: 10%;
+    margin-left: 625px;
+}
+
+@media (max-width: 1199px) {
+    .bootstrap-wrapper {
+        margin-top: 50px;
+        margin-left: -150px;
+    }
+
+    mat-card {
+        margin-left: 20px;
+    }
+
+    .card {
+        width: 31%;
+        margin-top: -60px;
+        margin-left: 500px;
+    }
+
+    .facebok-logar {
+        font-size: 14px;
+        margin-left: 40px;
+    }
+
+    .app-mobile {
+        display: none;
+    }
+
+    .appstore {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    mat-card {
+        width: 100%;
+        margin-left: -200px;
+    }
+
+    .facebok-logar {
+        display: none;
+    }
+
+    .facebook-forgotpassword {
+        text-align: center;
+    }
+
+    .card {
+        width: 48%;
+        margin-top: 20px;
+        margin-left: 282px;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .app-mobile {
+        display: none;
+    }
+
+    .appstore {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    mat-card {
+        width: 100%;
+        margin-left: -140px;
+    }
+
+    .card {
+        width: 48%;
+        margin-top: 20px;
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 767px) {
+    mat-card {
+        width: 70%;
+        margin-left: 100px;
+    }
+
+    .card {
+        width: 70%;
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 575px) {
+    mat-card {
+        width: 50%;
+        margin-left: 220px;
+    }
+
+    .card {
+        width: 50%;
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 471px) {
+    mat-card {
+        width: 50%;
+        margin-left: 200px;
+    }
+
+    .card {
+        width: 50%;
+        margin-top: 20px;
+        margin-left: 200px;
+    }
 }
