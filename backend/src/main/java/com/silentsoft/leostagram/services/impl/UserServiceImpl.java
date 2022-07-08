@@ -24,8 +24,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User createUser(User user, Set<UserRole> userRoles) throws Exception {
 
-		User local = this.userRepository.findByUsername(user.getUsername());
-		if (local != null) {
+		User local = this.userRepository.findByEmail(user.getEmail());
+		User localUsername = this.userRepository.findByUsername(user.getUsername());
+		if (local != null && localUsername != null) {
 			System.out.println("O Usuário Já Existe !!");
 			throw new Exception("O Usuário Já Está Salvo No Banco !!");
 		} else {
@@ -36,8 +37,8 @@ public class UserServiceImpl implements UserService {
 
 			user.getUserRoles().addAll(userRoles);
 			local = this.userRepository.save(user);
+			localUsername = this.userRepository.save(user);
 		}
-
 		return local;
 	}
 
@@ -51,7 +52,7 @@ public class UserServiceImpl implements UserService {
 	public User getUserByEmail(String email) {
 		return this.userRepository.findByEmail(email);
 	}
-	
+
 	@Override
 	public void delete(Long userId) {
 		this.userRepository.deleteById(userId);

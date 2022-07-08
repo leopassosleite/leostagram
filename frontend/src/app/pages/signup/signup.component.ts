@@ -32,6 +32,7 @@ export class SignupComponent implements OnInit {
       (data) => {
         console.log(data);
         alert('Usuário cadastrado');
+        window.location.href = '';
       },
       (error) => {
         console.log(error);

@@ -56,9 +56,9 @@ export class HomeComponent implements OnInit {
 
             //redireciona admin-dashboard e user-dashboard
             if (this.login.getUserRole() == "ADMIN") {
-              window.location.href='/admin';
+              window.location.href = '/admin';
             } else if (this.login.getUserRole() == 'NORMAL') {
-              window.location.href='/user-dashboard';
+              window.location.href = '/user-dashboard';
             } else {
               this.login.logout();
             }
@@ -67,6 +67,9 @@ export class HomeComponent implements OnInit {
       (error) => {
         console.log('Error !');
         console.log(error);
+        this.snack.open("Seu Username ou Senha foi informado incorretamente !!", '', {
+          duration: 3000,
+        });
       }
     )
   }

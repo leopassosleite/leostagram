@@ -15,13 +15,17 @@ import { HttpClientModule } from '@angular/common/http'
 import { authInterceptorProvaiders } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     HomeComponent,
     DashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
     MatInputModule,
     FormsModule,
     HttpClientModule,

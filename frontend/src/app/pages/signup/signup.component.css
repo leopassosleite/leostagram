@@ -4,6 +4,12 @@
     width: 68%;
 }
 
+mat-card {
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 68%;
+}
+
 .text-center{
     text-align: center;
     font-size: 30px;
@@ -39,4 +45,22 @@ p{
     width: 89%;
     margin-top: 10px;
     margin-left: 22px;
+}
+
+.account-existing{
+    padding-top: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.app-mobile{
+    margin-top: 20px;
+    margin-left: 230px;
+    font-size: 15px;
+}
+
+.appstore{
+   width: 25%;
+   margin-left: 150px;
+   margin-bottom: 20px;
 }

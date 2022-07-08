@@ -1,0 +1,8 @@
+<mat-toolbar>
+    <span class="logo">Leostagram</span>
+    <span class="example-spacer"></span>
+    <button (click)="logout()" *ngIf="login.isLoggedIn()" mat-icon-button class="logout"
+        aria-label="Example icon-button with heart icon">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
