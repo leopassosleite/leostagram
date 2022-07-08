@@ -12,11 +12,16 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { authInterceptorProvaiders } from './services/auth.interceptor';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http'
     HttpClientModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [authInterceptorProvaiders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

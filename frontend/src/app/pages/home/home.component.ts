@@ -10,7 +10,7 @@ import { HomeService } from 'src/app/services/home.service';
 export class HomeComponent implements OnInit {
 
   public loginData = {
-    email: '',
+    username: '',
     password: ''
   }
 
@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit {
     console.log("Login botão");
 
     if (
-      this.loginData.email.trim() == '' ||
-      this.loginData.email == null
+      this.loginData.username.trim() == '' ||
+      this.loginData.username == null
     ) {
       this.snack.open('Informe seu Email !! ', '', {
         duration: 3000,
@@ -43,9 +43,21 @@ export class HomeComponent implements OnInit {
     }
 
     this.login.generateToken(this.loginData).subscribe(
-      (data:any)=> {
+      (data: any) => {
         console.log('succsess');
         console.log(data);
+
+        //Login
+        this.login.loginUser(data.token);
+        this.login.getCurrentUser().subscribe(
+          (user: any) => {
+            this.login.SetUser(user);
+            console.log(user);
+
+            //redireciona admin-dashboard
+            
+          }
+        );
       },
       (error) => {
         console.log('Error !');

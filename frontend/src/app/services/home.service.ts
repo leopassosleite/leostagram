@@ -9,8 +9,59 @@ export class HomeService {
 
   constructor(private http: HttpClient) { }
 
+  public getCurrentUser(){
+    return this.http.get(`${baseUrl}/current-user`)
+  }
+
   //Gera Token
   public generateToken(loginData: any) {
     return this.http.post(`${baseUrl}/generate-token`, loginData);
+  }
+
+  //set token em LocalStorage
+  public loginUser(token: any) {
+    localStorage.setItem('token', token);
+    return true;
+  }
+
+  //Login
+  public isLoggedId() {
+    let tokenStr = localStorage.getItem("token");
+    if (tokenStr == undefined || tokenStr == '' || tokenStr == null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  //Logout: Remove token da LocalStorage
+  public logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    return true;
+  }
+
+  public getToken() {
+    return localStorage.getItem('token');
+  }
+
+  //userDetail
+  public SetUser(user: any) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  public getUser() {
+    let userStr = localStorage.getItem("user");
+    if (userStr != null) {
+      return JSON.parse(userStr);
+    } else {
+      this.logout();
+      return null;
+    }
+  }
+
+  public getUserRole() {
+    let user = this.getUser()
+    return user.authorities[0].authority;
   }
 }
