@@ -50,6 +50,8 @@ mat-card {
 .facebok-logar{
     margin-left: 60px;
     font-size: 15px;
+    text-decoration: none;
+    color: rgb(9, 9, 104);
 }
 
 .facebook-forgotpassword{
@@ -60,6 +62,7 @@ mat-card {
 
 .signup {
     font-size: 13px;
+    text-decoration: none;
 }
 
 .app-mobile{
